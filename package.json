@@ -1,0 +1,26 @@
+{
+  "name": "ghibli-sign-up",
+  "version": "1.0.0",
+  "description": "This is the Tim's first collaboration project. Another line to test... - tinytorches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tim0thylee/ghibli-sign-up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tim0thylee/ghibli-sign-up/issues"
+  },
+  "homepage": "https://github.com/tim0thylee/ghibli-sign-up#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
