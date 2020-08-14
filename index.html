@@ -9,11 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Studio Ghibli</title>
+    <title> Studio Ghibli </title>
   </head>
   <body>
     <header>
-      <img class="home" src="/img/home.png" alt="home logo" />
+      <div class="logo-container">
+        <img class="home" src="/img/home.png" alt="home logo" />
+        <h4>Studio Ghibli</h4>
+      </div>
       <nav>
         <ul class="nav-links">
           <li><a href="#">Feature Films</a></li>
@@ -28,16 +31,18 @@
     <main>
       <section class="hero-section">
          <div class="introduction">
-             <img src="./img/totoro-1200x800.png" alt="totoro illustration">
+             <img width="100%" height="auto" src="./img/totoro-1200x800.png" alt="totoro illustration">
          </div>
           </div>
       </section>
     </main>
     <footer>
         <div class="foot-nav">
-          <p>© 2005-2020 STUDIO GHIBLI Inc.</p>
-          <a href="#">Privacy Policy</a>
+          <p class="copyright">© 2005-2020 STUDIO GHIBLI Inc.</p>
+          <div class="legal">
+             <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
+          </div>
         </div>
       </footer>
   </body>

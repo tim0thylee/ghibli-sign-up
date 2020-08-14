@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
 /* 
 #373a3c;
@@ -12,13 +12,19 @@
   background-color: #109ceb;
 }
 
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
 li,
 a,
 button {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: aliceblue;
+  color: white;
   text-decoration: none;
 }
 
@@ -26,11 +32,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
+  padding: 20px 5%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .home {
-  cursor: pointer;
+  padding-right: 8px;
 }
 
 .nav-links {
@@ -39,7 +51,7 @@ header {
 
 .nav-links li {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 16px;
 }
 
 .nav-links li a {
@@ -47,7 +59,8 @@ header {
 }
 
 .nav-links li a:hover {
-  color: lightcoral;
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 button {
@@ -55,11 +68,41 @@ button {
   background-color: rgba(255, 255, 255, 1);
   color: #109ceb;
   border: none;
-  border-radius: 50px;
+  border-radius: 24px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 
 button:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.copyright {
+  display: inline-block;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: white;
+  padding-right: 24px;
+}
+
+.legal {
+  display: inline-block;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 5%;
+}
+
+footer a {
+  display: inline-block;
+  padding: 0px 16px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.8);
 }
