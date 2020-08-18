@@ -1,12 +1,11 @@
 const express = require('express')
-var path = require("path");
 const app = express()
-const port = 3000
+const routes = require('./routers/routes')
+const PORT = 3000
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', routes);
 
-require("./routes.js")(app)
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
