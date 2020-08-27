@@ -26,4 +26,16 @@ router.post('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res, next) => {
+    User.findById(req.params.id)
+        .then(user => {
+            if(user) {
+                res.json(user)
+            } else {
+                res.status(404).end()
+            }
+        })
+        .catch(error => next(error))
+})
+
 module.exports = router
