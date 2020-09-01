@@ -13,9 +13,24 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 })
 
 const userSchema = new mongoose.Schema({
-    username: String,
-    password: String,
-    email: String
+    username: {
+      type: String,
+      minlength: 5,
+      maxlength: 25,
+      require: true
+    },
+    password: {
+      type: String,
+      minlength: 5,
+      maxlength: 25,
+      require: true
+    },
+    email: {
+      type: String,
+      minlength: 5,
+      maxlength: 25,
+      require: true
+    },
 })
 
 userSchema.set('toJSON', {

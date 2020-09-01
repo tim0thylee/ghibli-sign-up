@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     
     user.save().then(savedUser => {
         res.json(savedUser)
-    })
+    }).catch(error => next(error))
 })
 
 router.get('/:id', (req, res, next) => {
