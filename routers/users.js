@@ -1,35 +1,41 @@
 const express = require('express')
 const router = express.Router()
-
-let users = [
-    {
-        username: "TimCalas",
-        password: "secret"
-    }
-]
+const User = require('../models/user')
 
 router.get('/', (req, res) => {
-    return res.json(users)
+    User.find({}).then(users => {
+        res.json(users)
+    })
 })
 
 router.post('/', (req, res) => {
-    let inArray = false
-    const newUser = {
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email
+    const body = req.body
+ 
+    if (!body.username || !body.password || !body.email) {
+        return res.status(400).json({ error: 'content missing' })
     }
-    for (let user of users) {
-        if (user.username === req.body.username) {
-            inArray = true;
-        }
-    }
-    if (inArray) {
-        return res.status(400).end()
-    } else {
-        users = users.concat(newUser)
-        return res.json(newUser)
-    }
+    
+    const user = new User({
+        username: body.username,
+        password: body.password,
+        email: body.email
+    })
+    
+    user.save().then(savedUser => {
+        res.json(savedUser)
+    }).catch(error => next(error))
+})
+
+router.get('/:id', (req, res, next) => {
+    User.findById(req.params.id)
+        .then(user => {
+            if(user) {
+                res.json(user)
+            } else {
+                res.status(404).end()
+            }
+        })
+        .catch(error => next(error))
 })
 
 module.exports = router
