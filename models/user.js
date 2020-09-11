@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
 
 const url = process.env.MONGODB_URI
 
@@ -17,18 +18,18 @@ const userSchema = new mongoose.Schema({
       type: String,
       minlength: 5,
       maxlength: 25,
-      require: true
+      require: true,
+      unique: true
     },
     password: {
       type: String,
       minlength: 5,
-      maxlength: 25,
       require: true
     },
     email: {
       type: String,
       minlength: 5,
-      maxlength: 25,
+      maxlength: 100,
       require: true
     },
 })
